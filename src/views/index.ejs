@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>MinIO Buckets</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Gerenciador do Bucket de Teste MinIO</h1>
+      <div class="data-item">
+        <span>🟦 Total de Arquivos:</span>
+        <span id="totalFiles"><%= totalFiles %></span>
+      </div>
+      <div class="data-item">
+        <form action="/register" method="post" enctype="multipart/form-data">
+          <span>
+            <label for="fileUpload" class="fileSend">Selecionar Arquivo</label>
+            <input
+              type="file"
+              name="fileUpload"
+              id="fileUpload"
+              accept=".png, .jpg, .jpeg, .txt, .md, .pdf, .txt"
+              hidden
+              required
+            />
+          </span>
+          <span>
+            <button type="submit" class="fileSend"> Enviar </button>
+          </span>
+        </form>
+      </div>
+
+      <div class="table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Nome do Arquivo</th>
+              <th>Extensão</th>
+            </tr>
+          </thead>
+          <tbody id="fileList">
+            <% files.forEach((file) => {%>
+            <tr>
+              <td><%= file.fileName %></td>
+              <td><%= file.extension %></td>
+            </tr>
+            <%})%>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aws-sdk/2.1239.0/aws-sdk.min.js"></script>
+  </body>
+</html>

@@ -5,12 +5,15 @@
   "main": "index.js",
   "scripts": {
     "minio": ".\\minio.exe server .\\src\\docs --console-address :9090",
-    "dev": "node src/index.js"
+    "dev": "node --watch src/server.js"
   },
   "keywords": [],
   "author": "ViniciusLaureano",
   "license": "ISC",
   "dependencies": {
-    "minio": "^8.0.2"
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "minio": "^8.0.2",
+    "multer": "^1.4.5-lts.1"
   }
 }
