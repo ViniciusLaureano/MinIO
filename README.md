@@ -1,0 +1,2 @@
+# MinIO
+MinIO Connection Test
