@@ -4,7 +4,8 @@
   "description": "MinIO Connection Test",
   "main": "index.js",
   "scripts": {
-    "minio": ".\\minio.exe server .\\src\\docs --console-address :9090"
+    "minio": ".\\minio.exe server .\\src\\docs --console-address :9090",
+    "dev": "node src/index.js"
   },
   "keywords": [],
   "author": "ViniciusLaureano",
