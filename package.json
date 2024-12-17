@@ -11,6 +11,7 @@
   "author": "ViniciusLaureano",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.4.7",
     "ejs": "^3.1.10",
     "express": "^4.21.2",
     "minio": "^8.0.2",

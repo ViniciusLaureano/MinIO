@@ -1,41 +1,31 @@
-const files = [
-  { fileName: "Teste1", extension: "txt" },
-  { fileName: "Teste2", extension: "png" },
-];
+const appService = require("../services/app-service");
 
 module.exports = {
-  index: (req, res) => {
-    const totalFiles = 10;
+  index: async (req, res) => {
+    const files = await appService.getFiles();
 
+    const totalFiles = files.length;
     res.render("index", { totalFiles, files });
   },
 
-  register: (req, res) => {
+  register: async (req, res) => {
     try {
       if (!req.file) {
         return res.status(400).send("Nenhum arquivo foi enviado.");
       }
 
-      const photo = {
+      const newFile = {
         originalname: req.file.originalname,
         buffer: req.file.buffer,
         mimetype: req.file.mimetype,
       };
 
-      const newPhoto = {
-        fileName: req.file.originalname,
-        extension: req.file.mimetype,
-      };
+      await appService.uploadFile(newFile);
 
-      files.push(newPhoto);
       res.redirect("/");
     } catch (error) {
       console.error("Erro ao salvar o arquivo:", error);
       res.status(500).send("Erro interno ao processar o arquivo.");
     }
-  },
-
-  test: (req, res) => {
-    console.log(req);
   },
 };

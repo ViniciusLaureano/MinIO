@@ -10,6 +10,4 @@ router.get("/", appController.index);
 
 router.post("/register", upload.single("fileUpload"), appController.register);
 
-router.get("/test", appController.test);
-
 module.exports = router;
