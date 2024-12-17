@@ -1,0 +1,12 @@
+{
+  "name": "minio",
+  "version": "1.0.0",
+  "description": "MinIO Connection Test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "ViniciusLaureano",
+  "license": "ISC"
+}
