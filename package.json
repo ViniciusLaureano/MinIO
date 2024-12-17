@@ -8,5 +8,8 @@
   },
   "keywords": [],
   "author": "ViniciusLaureano",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "minio": "^8.0.2"
+  }
 }
