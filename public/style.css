@@ -106,3 +106,36 @@ form {
   justify-content: space-between;
   width: 100%;
 }
+
+.action-btn {
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button i {
+  font-size: 20px;
+}
+
+button.download {
+  background-color: #167dcb;
+  color: white;
+}
+
+button.download:hover {
+  background-color: #1a89e3;
+}
+
+button.delete {
+  background-color: #e74c3c;
+  color: white;
+}
+
+button.delete:hover {
+  background-color: #c0392b;
+}
