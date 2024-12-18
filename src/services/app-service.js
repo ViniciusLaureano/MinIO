@@ -1,7 +1,7 @@
 require("dotenv").config();
 const minioClient = require("../config/minio-client");
 
-const bucketName = process.env.BUCKET_NAME;
+const bucketName = process.env.MINIO_BUCKET_NAME;
 module.exports = {
   getFiles: async () => {
     const fileList = [];
