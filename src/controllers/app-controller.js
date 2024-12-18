@@ -28,4 +28,20 @@ module.exports = {
       res.status(500).send("Erro interno ao processar o arquivo.");
     }
   },
+
+  download: (req, res) => {
+    const { fileName } = req.params;
+
+    appService.getFile(fileName);
+
+    res.redirect("/");
+  },
+
+  delete: (req, res) => {
+    const { fileName } = req.params;
+
+    appService.deleteFile(fileName);
+
+    res.redirect("/");
+  },
 };

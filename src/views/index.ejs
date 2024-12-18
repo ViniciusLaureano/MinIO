@@ -53,7 +53,7 @@
               <td><%= file.extension %></td>
               <td>
                 <form
-                  action="/download/<%= file.fileName %>"
+                  action="/download/<%= file.fileName %>.<%= file.extension %>"
                   method="post"
                   style="display: inline"
                 >
@@ -67,7 +67,7 @@
                 </form>
 
                 <form
-                  action="/delete/<%= file.fileName %>"
+                  action="/delete/<%= file.fileName %>.<%= file.extension %>"
                   method="post"
                   style="display: inline"
                 >

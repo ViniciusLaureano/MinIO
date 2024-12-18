@@ -36,4 +36,16 @@ module.exports = {
       }
     );
   },
+
+  getFile: async (fileName) => {
+    await minioClient.fGetObject(
+      bucketName,
+      fileName,
+      `./public/docs/${fileName}`
+    );
+  },
+
+  deleteFile: async (fileName) => {
+    await minioClient.removeObject(bucketName, fileName);
+  },
 };
